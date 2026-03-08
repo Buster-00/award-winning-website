@@ -16,25 +16,6 @@
       class="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75"
     >
       <div>
-        <div class="mask-clip-path absolute-center absolute z-50 size-64 cursor-pointer overflow-hidden rounded-lg">
-          <VideoPreview>
-            <div
-              class="origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100"
-              @click="handleMiniVdClick"
-            >
-              <video
-                ref="nextVdRef"
-                :src="getVideoSrc((currentIndex % totalVideos) + 1)"
-                loop
-                muted
-                id="current-video"
-                class="size-64 origin-center scale-150 object-cover object-center"
-                @loadeddata="handleVideoLoad"
-              />
-            </div>
-          </VideoPreview>
-        </div>
-
         <video
           ref="nextVdRef"
           :src="getVideoSrc(currentIndex)"
@@ -55,34 +36,32 @@
       </div>
 
       <h1 class="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-75">
-        G<b>A</b>MING
+        骑士团长
       </h1>
 
       <div class="absolute left-0 top-0 z-40 size-full">
         <div class="mt-24 px-5 sm:px-10">
+          <div class="max-w-48">
           <h1 class="special-font hero-heading text-blue-100">
-            redefi<b>n</b>e
+            你好
           </h1>
 
-          <p class="mb-5 max-w-64 font-robert-regular text-blue-100">
-            Enter the Metagame Layer <br /> Unleash the Play Economy
+          <p class="mb-5 font-robert-regular text-blue-100 text-left">
+            每个人都有属于自己的一片森林，<br />迷失的人迷失了，相逢的人会再相逢。
           </p>
+        </div>
 
           <Button
             id="watch-trailer"
-            title="Watch trailer"
-            container-class="bg-yellow-300 flex-center gap-1"
-          >
-            <template #left-icon>
-              <Icon icon="ti:location-arrow" />
-            </template>
-          </Button>
+            title="窥视内心"
+            container-class="flex justify-center items-center"
+          />
         </div>
       </div>
     </div>
 
     <h1 class="special-font hero-heading absolute bottom-5 right-5 text-black">
-      G<b>A</b>MING
+      骑士团长
     </h1>
   </div>
 </template>
@@ -101,10 +80,12 @@ const currentIndex = ref(1)
 const hasClicked = ref(false)
 const loading = ref(true)
 const loadedVideos = ref(0)
-const totalVideos = 4
+const totalVideos = 5
 const nextVdRef = ref(null)
 
 const getVideoSrc = (index) => `/videos/hero-${index}.mp4`
+
+const requiredLoadedVideos = 2 // 首屏 3 个 video 元素加载完成即可隐藏 loading
 
 const handleVideoLoad = () => {
   loadedVideos.value++
@@ -116,7 +97,7 @@ const handleMiniVdClick = () => {
 }
 
 watch(loadedVideos, (val) => {
-  if (val === totalVideos - 1) {
+  if (val >= requiredLoadedVideos) {
     loading.value = false
   }
 })

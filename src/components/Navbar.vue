@@ -7,17 +7,14 @@
     <header class="absolute top-1/2 w-full -translate-y-1/2">
       <nav class="flex size-full items-center justify-between p-4">
         <div class="flex items-center gap-7">
-          <img src="/img/logo.png" alt="logo" class="w-10" />
-
-          <Button
-            id="product-button"
-            title="Products"
-            container-class="bg-blue-50 md:flex hidden items-center justify-center gap-1"
+          <button
+            id="home-button"
+            class="hidden h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white text-black transition-colors hover:opacity-90 md:flex"
+            aria-label="家"
+            @click="scrollToTop"
           >
-            <template #right-icon>
-              <Icon icon="ti:location-arrow" />
-            </template>
-          </Button>
+            <Icon icon="lucide:home" class="h-5 w-5" />
+          </button>
         </div>
 
         <div class="flex h-full items-center">
@@ -58,9 +55,8 @@ import { ref, watch } from 'vue'
 import gsap from 'gsap'
 import { useWindowScroll } from '@vueuse/core'
 import { Icon } from '@iconify/vue'
-import Button from './Button.vue'
 
-const navItems = ['Nexus', 'Vault', 'Prologue', 'About', 'Contact']
+const navItems = ['Prologue', 'About', 'Contact']
 
 const isAudioPlaying = ref(false)
 const isIndicatorActive = ref(false)
@@ -70,6 +66,10 @@ const navContainerRef = ref(null)
 const { y: currentScrollY } = useWindowScroll()
 const isNavVisible = ref(true)
 const lastScrollY = ref(0)
+
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+}
 
 const toggleAudioIndicator = () => {
   isAudioPlaying.value = !isAudioPlaying.value
