@@ -6,51 +6,39 @@
           直到地下，命运的列车在此交汇
         </p>
         <p class="max-w-md font-circular-web text-lg text-blue-50 opacity-50">
-          没有人知道下一班列车会驶向何处。刺鼻的苹果气味四溢在列车站台。
+          没有人知道下一班列车会驶向何处。甜蜜的苹果气味四溢在列车站台。
         </p>
       </div>
 
       <BentoTilt class="border-hsla relative mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
         <BentoCard
           src="/videos/feature-1.mp4"
-          title="radia<b>n</b>t"
-          description="A cross-platform metagame app, turning your activities across Web2 and Web3 games into a rewarding adventure."
-          :is-coming-soon="true"
         />
       </BentoTilt>
 
-      <div class="grid h-[135vh] w-full grid-cols-2 grid-rows-3 gap-7">
+      <div class="grid h-[200vh] w-full grid-cols-2 grid-rows-3 gap-7">
         <BentoTilt class="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
           <BentoCard
-            src="/videos/feature-2.mp4"
-            title="zig<b>m</b>a"
-            description="An anime and gaming-inspired NFT collection - the IP primed for expansion."
-            :is-coming-soon="true"
+            src="/videos/feature-2.mp4"         
           />
         </BentoTilt>
 
         <BentoTilt class="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
           <BentoCard
             src="/videos/feature-3.mp4"
-            title="n<b>e</b>xus"
-            description="A gamified social hub, adding a new dimension of play to social interaction for Web3 communities."
-            :is-coming-soon="true"
           />
         </BentoTilt>
 
         <BentoTilt class="bento-tilt_1 me-14 md:col-span-1 md:me-0">
           <BentoCard
             src="/videos/feature-4.mp4"
-            title="az<b>u</b>l"
-            description="A cross-world AI Agent - elevating your gameplay to be more fun and productive."
-            :is-coming-soon="true"
           />
         </BentoTilt>
 
         <BentoTilt class="bento-tilt_2">
-          <div class="flex size-full flex-col justify-between bg-violet-300 p-5">
+          <div class="flex size-full flex-col justify-between bg-white p-5">
             <h1 class="bento-title special-font max-w-64 text-black">
-              M<b>o</b>re co<b>m</b>ing s<b>o</b>on.
+              暴<b>风</b>雨<b>将</b>至。
             </h1>
 
             <Icon icon="ti:location-arrow" class="m-5 scale-[5] self-end" />

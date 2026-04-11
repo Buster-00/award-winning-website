@@ -2,12 +2,12 @@
   <div id="story" class="min-h-dvh w-screen bg-black text-blue-50">
     <div class="flex size-full flex-col items-center py-10 pb-24">
       <p class="font-general text-sm uppercase md:text-[10px]">
-        the multiversal ip world
+        小小人在耳边骚动不安
       </p>
 
       <div class="relative size-full">
         <AnimatedTitle
-          title="the st<b>o</b>ry of <br /> a hidden real<b>m</b>"
+          title="驾驶<b>白</b>色<br/>甲壳虫<b>让</b>老虎为你加油<br/>"
           container-class="mt-5 pointer-events-none mix-blend-difference relative z-10"
         />
 
@@ -16,7 +16,7 @@
             <div class="story-img-content">
               <img
                 ref="frameRef"
-                src="/img/entrance.webp"
+                src="/img/PUTATIGERINYOURTANK.jpg"
                 alt="entrance.webp"
                 class="object-contain"
                 @mousemove="handleMouseMove"
@@ -47,14 +47,12 @@
       <div class="-mt-80 flex w-full justify-center md:-mt-64 md:me-44 md:justify-end">
         <div class="flex h-full w-fit flex-col items-center md:items-start">
           <p class="mt-3 max-w-sm text-center font-circular-web text-violet-50 md:text-start">
-            Where realms converge, lies Zentry and the boundless pillar.
-            Discover its secrets and shape your fate amidst infinite
-            opportunities.
+            就让老虎保证您在首都高一帆风顺吧。
           </p>
 
           <Button
             id="realm-btn"
-            title="discover prologue"
+            title="加油"
             container-class="mt-5"
           />
         </div>
