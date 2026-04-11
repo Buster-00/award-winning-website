@@ -1,14 +1,12 @@
 <template>
-  <section class="bg-black pb-52">
+  <section class="bg-orange-500 pb-52">
     <div class="container mx-auto px-3 md:px-10">
       <div class="px-5 py-32">
         <p class="font-circular-web text-lg text-blue-50">
-          Into the Metagame Layer
+          直到地下，命运的列车在此交汇
         </p>
         <p class="max-w-md font-circular-web text-lg text-blue-50 opacity-50">
-          Immerse yourself in a rich and ever-expanding universe where a vibrant
-          array of products converge into an interconnected overlay experience
-          on your world.
+          没有人知道下一班列车会驶向何处。刺鼻的苹果气味四溢在列车站台。
         </p>
       </div>
 

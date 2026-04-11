@@ -1,13 +1,9 @@
 <template>
-  <main class="relative min-h-screen w-screen overflow-x-hidden">
+  <div class="relative min-h-screen w-screen overflow-x-hidden">
     <NavBar />
-    <Hero />
-    <About />
-    <Features />
-    <Story />
-    <Contact />
+    <router-view class="size-full" />
     <Footer />
-  </main>
+  </div>
 </template>
 
 <script setup>

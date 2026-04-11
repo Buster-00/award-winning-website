@@ -2,19 +2,17 @@
   <div id="about" class="min-h-screen w-screen">
     <div class="relative mb-8 mt-36 flex flex-col items-center gap-5">
       <p class="font-general text-sm uppercase md:text-[10px]">
-        Welcome to Zentry
+        地下的世界
       </p>
 
       <AnimatedTitle
-        title="Disc<b>o</b>ver the world's <br /> largest shared <b>a</b>dventure"
+        title="开始<br/>生存战略<br /> 和 <b>海边</b>卡夫卡"
         container-class="mt-5 !text-black text-center"
       />
 
       <div class="about-subtext">
-        <p>The Game of Games begins—your life, now an epic MMORPG</p>
         <p class="text-gray-500">
-          Zentry unites every player from countless games and platforms, both
-          digital and physical, into a unified Play Economy
+          名叫乌鸦的少年消逝在东京塔下
         </p>
       </div>
     </div>
@@ -22,7 +20,7 @@
     <div class="h-dvh w-screen" id="clip">
       <div class="mask-clip-path about-image">
         <img
-          src="/img/about.webp"
+          src="/img/tokyoTower.jpg"
           alt="Background"
           class="absolute left-0 top-0 size-full object-cover"
         />
