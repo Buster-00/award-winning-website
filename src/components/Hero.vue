@@ -18,19 +18,12 @@
       <div>
         <video
           ref="nextVdRef"
-          :src="getVideoSrc(currentIndex)"
+          :src="getVideoSrc(1)"
           loop
           muted
-          id="next-video"
-          class="absolute-center invisible absolute z-20 size-64 object-cover object-center"
-          @loadeddata="handleVideoLoad"
-        />
-        <video
-          :src="getVideoSrc(currentIndex === totalVideos - 1 ? 1 : currentIndex)"
           autoplay
-          loop
-          muted
-          class="absolute left-0 top-0 size-full object-cover object-center"
+          id="next-video"
+          class="absolute-center absolute z-20 size-128 object-cover object-center"
           @loadeddata="handleVideoLoad"
         />
       </div>
@@ -55,6 +48,7 @@
             id="watch-trailer"
             title="窥视内心"
             container-class="flex justify-center items-center"
+            @click="handleHeartClick"
           />
         </div>
       </div>
@@ -70,30 +64,26 @@
 import { ref, watch, onMounted } from 'vue'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
-import { Icon } from '@iconify/vue'
 import Button from './Button.vue'
-import VideoPreview from './VideoPreview.vue'
 
 gsap.registerPlugin(ScrollTrigger)
 
 const currentIndex = ref(1)
 const hasClicked = ref(false)
-const loading = ref(true)
+const loading = ref(false)
 const loadedVideos = ref(0)
-const totalVideos = 5
 const nextVdRef = ref(null)
 
 const getVideoSrc = (index) => `/videos/hero-${index}.mp4`
 
-const requiredLoadedVideos = 2 // 首屏 3 个 video 元素加载完成即可隐藏 loading
+const requiredLoadedVideos = 1 // 
 
 const handleVideoLoad = () => {
   loadedVideos.value++
 }
 
-const handleMiniVdClick = () => {
-  hasClicked.value = true
-  currentIndex.value = (currentIndex.value % totalVideos) + 1
+const handleHeartClick = () => {
+  gsap.to('#next-video', {rotate: 300, duration: 1, ease: 'power1.inOut'})
 }
 
 watch(loadedVideos, (val) => {
@@ -124,10 +114,13 @@ watch([hasClicked, currentIndex], () => {
 })
 
 onMounted(() => {
+  // 初始化视频帧
   gsap.set('#video-frame', {
     clipPath: 'polygon(14% 50%, 72% 0, 88% 90%, 0 65%)',
     borderRadius: '0% 0% 40% 10%',
   })
+
+  // 动画视频帧
   gsap.from('#video-frame', {
     clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
     borderRadius: '0% 0% 0% 0%',

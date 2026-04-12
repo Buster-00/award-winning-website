@@ -5,7 +5,7 @@
         <ImageClipBox src="/img/kfc.png" clip-class="contact-clip-path-1" />
         <ImageClipBox
           src="/img/nhk.jpg"
-          clip-class="contact-clip-path-2 lg:translate-y-40 translate-y-60"
+          clip-class="contact-clip-path-2 ©lg:translate-y-40 translate-y-60"
         />
       </div>
 
